@@ -18,5 +18,6 @@ from django.urls import path
 from apps.meizi import views
 
 urlpatterns = [
-    path('run/',views.Run.as_view())
+    path('run/',views.Run.as_view()),
+    path('down/',views.downfile.as_view())
 ]

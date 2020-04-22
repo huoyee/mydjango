@@ -1,8 +1,10 @@
 from datetime import timedelta
-
+from celery import platforms
 import djcelery
-from celery.schedules import crontab
 
+from celery.schedules import crontab
+#celery不能用root用户启动问题 C_FORCE_ROOT environment
+platforms.C_FORCE_ROOT = True  #加上这一行
 djcelery.setup_loader()
 
 BROKER_BACKEND = 'redis'

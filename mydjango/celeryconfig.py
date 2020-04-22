@@ -1,6 +1,13 @@
+from datetime import timedelta
+
 import djcelery
+from celery.schedules import crontab
 
 djcelery.setup_loader()
+
+BROKER_BACKEND = 'redis'
+BROKER_URL = 'redis://localhost:6379/1'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/2'
 
 CELERY_QUEUES = {
     'beat_tasks':{
@@ -36,3 +43,14 @@ CELERYD_MAX_TASKS_PER_CHILD = 100
 
 #单个任务最大运行时间
 #CELERYD_TASK_TIME_LIMIT = 12*30
+
+CELERYBEAT_SCHEDULE = {
+    'task1':{
+        'task': 'testcelery',
+        #'schedule': crontab(minute='*/6') ,#10秒执行一次
+        'schedule':timedelta(seconds=5),
+        'options':{
+            'queue':'beat_tasks'
+        }
+    }
+}

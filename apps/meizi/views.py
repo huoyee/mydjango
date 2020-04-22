@@ -18,6 +18,7 @@ class Run(views.View):
 class downfile(views.View):
 
     def get(self,request):
-        Testcelery.delay()
+        #Testcelery.delay()
+        Testcelery.apply_async(args=('hello',),kwargs={'aa':'bb'}, queue='work_queue')
         return JsonResponse({"result":'ok'})
 

@@ -22,3 +22,8 @@ class downfile(views.View):
         Testcelery.apply_async(args=('hello',),kwargs={'aa':'bb'}, queue='work_queue')
         return JsonResponse({"result":'ok'})
 
+class MeiziDown(views.View):
+
+    def get(self,request):
+
+        pass

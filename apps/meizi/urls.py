@@ -19,5 +19,5 @@ from apps.meizi import views
 
 urlpatterns = [
     path('run/',views.Run.as_view()),
-    path('down/',views.downfile.as_view())
+    path('down/',views.MeiziDown.as_view())
 ]

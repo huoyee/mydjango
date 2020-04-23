@@ -95,11 +95,14 @@ app 目录创建tasks.py
 |crontab(0, 0, day_of_month=’11’,month_of_year=’5’)|每年五月份的第十一天执行|
 |crontab(0, 0,month_of_year=’*/3’)|每个季度的第一个月执行|
 ### 5.运行
-####启动服务
+###启动服务
 `python manage.py runserver 0.0.0.0:8000`
-####启动worker  
+###启动worker  
 `python manage.py celery worker -l info`
-####启动beat  
+###启动beat  
 `python manage.py celery beat -l info`
-####启动flower
-`python manage.py celery flower --basic-auth=name:pwd`
+###启动flower
+`python manage.py celery flower --basic-auth=name:pwd --address=0.0.0.0 --port=8001`
+
+# 二、集成django rest framework
+`pip install djangorestframework`

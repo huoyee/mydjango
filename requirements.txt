@@ -6,7 +6,7 @@ billiard==3.3.0.23
 celery==3.1.25
 certifi==2020.4.5.1
 chardet==3.0.4
-Django==2.1
+Django==2.2.13
 django-celery==3.3.1
 django-redis==4.11.0
 docopt==0.6.2

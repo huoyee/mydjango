@@ -4,7 +4,7 @@ anyjson==0.3.3
 asgiref==3.2.7
 billiard==3.3.0.23
 celery==3.1.25
-certifi==2020.4.5.1
+certifi==2022.12.7
 chardet==3.0.4
 Django==2.1
 django-celery==3.3.1
